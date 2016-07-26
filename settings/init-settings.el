@@ -12,9 +12,9 @@
 (set-face-background 'linum "white")
 (set-face-foreground 'linum "blue")
 
-(deftheme tron
-  "Based on Color theme by Ivan Marcin,  created 2012-08-25")
- (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(load-theme 'tango-dark)
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;;(custom-theme-set-faces
 ;; `tron
 ;; `(default ((t (:background "#000000" :foreground "#b0c7d4" ))))
@@ -35,8 +35,6 @@
 ;; `(minibuffer-prompt ((t (:foreground "#729fcf" :bold t))))
 ;; `(font-lock-warning-face ((t (:foreground "red" :bold t))))
 ;;)
-
-(provide-theme 'tron)
 
 ;; LLVM highlighting
 (require 'llvm-mode)
