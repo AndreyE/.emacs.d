@@ -39,3 +39,6 @@
 (require 'elscreen)
 (elscreen-set-prefix-key "\C-z")
 (elscreen-start)
+
+;; clang format
+(require 'clang-format)

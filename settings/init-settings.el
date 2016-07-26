@@ -3,6 +3,9 @@
 ;; Erase trailing white spaces
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; No tabs
+(setq-default indent-tabs-mode nil)
+
 (normal-erase-is-backspace-mode 0)
 (set-face-background 'minibuffer-prompt "yellow")
 (global-linum-mode 1)
@@ -41,3 +44,10 @@
 
 ;; OpenCL highlighting
 (setq auto-mode-alist (cons '("\.cl$" . c-mode) auto-mode-alist))
+
+;; orgmode
+(require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
