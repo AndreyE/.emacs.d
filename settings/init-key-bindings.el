@@ -16,3 +16,12 @@
 ;; clang format
 (global-set-key (kbd "C-x C-M-r") 'clang-format-region)
 (global-set-key (kbd "C-x C-M-b") 'clang-format-buffer)
+
+;; get file path
+(defun show-file-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name))
+  (kill-new (file-truename buffer-file-name))
+  )
+(global-set-key (kbd "C-x g") 'show-file-name)
