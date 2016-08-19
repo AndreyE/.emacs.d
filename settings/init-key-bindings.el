@@ -1,5 +1,3 @@
-(provide 'init-key-bindings)
-
 ;; revert buffer
 (global-set-key (kbd "C-c r") 'revert-buffer)
 ;; run shel in minibuffer
@@ -25,3 +23,6 @@
   (kill-new (file-truename buffer-file-name))
   )
 (global-set-key (kbd "C-x g") 'show-file-name)
+
+(provide 'init-key-bindings)
+;;; init-key-bindings.el ends here

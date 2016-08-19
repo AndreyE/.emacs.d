@@ -1,5 +1,3 @@
-(provide 'init-settings)
-
 ;; Erase trailing white spaces
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -49,3 +47,6 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+
+(provide 'init-settings)
+;;; init-settings.el ends here
