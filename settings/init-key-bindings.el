@@ -1,3 +1,6 @@
+;;; package --- key bindings
+;;; Commentary: a place for small functions is here too
+
 ;; revert buffer
 (global-set-key (kbd "C-c r") 'revert-buffer)
 ;; run shel in minibuffer
@@ -20,9 +23,22 @@
   "Show the full path file name in the minibuffer."
   (interactive)
   (message (buffer-file-name))
-  (kill-new (file-truename buffer-file-name))
-  )
+  (kill-new (file-truename buffer-file-name)))
 (global-set-key (kbd "C-x g") 'show-file-name)
+
+;; move lines up/down
+(defun move-line-up ()
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2))
+(global-set-key (kbd "<M-up>") 'move-line-up)
+
+(defun move-line-down ()
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1))
+(global-set-key (kbd "<M-down>") 'move-line-down)
 
 (provide 'init-key-bindings)
 ;;; init-key-bindings.el ends here
