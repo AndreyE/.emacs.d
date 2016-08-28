@@ -57,8 +57,8 @@
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-(require 'autopair)
-(autopair-global-mode)
+;(require 'autopair)
+;(autopair-global-mode 0)
 
 (setq-default py-shell-name "ipython")
 (setq-default py-which-bufname "IPython")
