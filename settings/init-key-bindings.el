@@ -38,3 +38,9 @@
   (transpose-lines 1)
   (forward-line -1))
 (global-set-key (kbd "<M-down>") 'move-line-down)
+
+;; Open file under cursor with C-x C-f
+(ffap-bindings)
+
+(provide 'init-key-bindings)
+;;; init-key-bindings.el ends here
