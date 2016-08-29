@@ -4,3 +4,5 @@
 (require 'init-settings)
 (require 'init-extensions)
 (require 'init-key-bindings)
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
