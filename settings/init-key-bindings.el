@@ -1,6 +1,7 @@
 ;;; package --- key bindings
 ;;; Commentary: a place for small functions is here too
 
+;;; Code
 ;; revert buffer
 (global-set-key (kbd "C-c r") 'revert-buffer)
 ;; run shel in minibuffer
@@ -42,6 +43,15 @@
 
 ;; Open file under cursor with C-x C-f
 (ffap-bindings)
+
+;; jedi keybindings
+(defun jedi-keybinding ()
+    (local-set-key (kbd "C-c g") 'jedi:goto-definition)
+    (local-set-key (kbd "C-c d") 'jedi:show-doc)
+    (local-set-key (kbd "<C-tab>") 'jedi:complete)
+    (local-set-key (kbd "C-c f") 'jedi-direx:switch-to-buffer)
+)
+(add-hook 'python-mode-hook 'jedi-keybinding)
 
 (provide 'init-key-bindings)
 ;;; init-key-bindings.el ends here

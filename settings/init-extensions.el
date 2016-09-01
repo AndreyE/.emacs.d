@@ -51,8 +51,11 @@
 (ido-mode t)
 
 (require 'jedi)
-(add-hook 'python-mode-hook 'auto-complete-mode)
-(add-hook 'python-mode-hook 'jedi:ac-setup)
+(setq jedi:doc-mode t)
+(setq jedi:complete-on-dot t)
+(add-hook 'python-mode-hook 'jedi:setup)
+(require 'jedi-direx)
+(add-hook 'jedi-mode-hook 'jedi-direx:setup)
 
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
