@@ -50,13 +50,6 @@
 (require 'ido)
 (ido-mode t)
 
-(require 'jedi)
-(setq jedi:doc-mode t)
-(setq jedi:complete-on-dot t)
-(add-hook 'python-mode-hook 'jedi:setup)
-(require 'jedi-direx)
-(add-hook 'jedi-mode-hook 'jedi-direx:setup)
-
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
@@ -65,6 +58,27 @@
 
 (setq-default py-shell-name "ipython")
 (setq-default py-which-bufname "IPython")
+
+(require 'jedi)
+(setq jedi:doc-mode t)
+(setq jedi:complete-on-dot t)
+(add-hook 'python-mode-hook 'jedi:setup)
+(require 'jedi-direx)
+(add-hook 'jedi-mode-hook 'jedi-direx:setup)
+;; go to definition and back
+(defvar jedi:goto-stack '())
+(defun jedi:jump-to-definition ()
+    (interactive)
+    (add-to-list 'jedi:goto-stack
+        (list (buffer-name) (point)))
+    (jedi:goto-definition))
+(defun jedi:jump-back ()
+    (interactive)
+    (let ((p (pop jedi:goto-stack)))
+         (if p (progn
+               (switch-to-buffer (nth 0 p))
+               (goto-char (nth 1 p))))))
+
 
 (provide 'init-extensions)
 ;;; init-extensions.el ends here

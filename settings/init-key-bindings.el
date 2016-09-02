@@ -46,12 +46,20 @@
 
 ;; jedi keybindings
 (defun jedi-keybinding ()
-    (local-set-key (kbd "C-c g") 'jedi:goto-definition)
+    (local-set-key (kbd "C-c g") 'jedi:jump-to-definition)
+    (local-set-key (kbd "C-c b") 'jedi:jump-back)
     (local-set-key (kbd "C-c d") 'jedi:show-doc)
     (local-set-key (kbd "<C-tab>") 'jedi:complete)
     (local-set-key (kbd "C-c f") 'jedi-direx:switch-to-buffer)
 )
 (add-hook 'python-mode-hook 'jedi-keybinding)
+(add-hook 'python-mode-hook
+          '(lambda ()
+            (local-set-key (kbd "C-c g") 'jedi:jump-to-definition)
+            (local-set-key (kbd "C-c b") 'jedi:jump-back)
+            (local-set-key (kbd "C-c d") 'jedi:show-doc)
+            (local-set-key (kbd "<C-tab>") 'jedi:complete)
+            (local-set-key (kbd "C-c f") 'jedi-direx:switch-to-buffer)))
 
 (provide 'init-key-bindings)
 ;;; init-key-bindings.el ends here
