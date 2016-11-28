@@ -60,6 +60,9 @@
             (local-set-key (kbd "C-c d") 'jedi:show-doc)
             (local-set-key (kbd "<C-tab>") 'jedi:complete)
             (local-set-key (kbd "C-c f") 'jedi-direx:switch-to-buffer)))
+;; run make
+(global-set-key (kbd "<C-f12>") (lambda () (interactive)(compile "make")))
+(global-set-key (kbd "<f12>") 'compile)
 
 (provide 'init-key-bindings)
 ;;; init-key-bindings.el ends here

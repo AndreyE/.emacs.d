@@ -48,5 +48,8 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "yandex-browser")
+
 (provide 'init-settings)
 ;;; init-settings.el ends here
