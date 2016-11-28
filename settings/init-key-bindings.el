@@ -42,5 +42,9 @@
 ;; Open file under cursor with C-x C-f
 (ffap-bindings)
 
+;; run make
+(global-set-key (kbd "<C-f12>") (lambda () (interactive)(compile "make")))
+(global-set-key (kbd "<f12>") 'compile)
+
 (provide 'init-key-bindings)
 ;;; init-key-bindings.el ends here
