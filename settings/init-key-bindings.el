@@ -9,8 +9,12 @@
 ;; elscreen (TABs) keys
 (global-set-key (kbd "M-k") 'elscreen-kill)
 (global-set-key (kbd "M-c") 'elscreen-create)
+(require 'make-mode)
+(define-key makefile-mode-map (kbd "M-n") 'nil)
+(define-key makefile-mode-map (kbd "M-p") 'nil)
 (global-set-key (kbd "M-n") 'elscreen-next)
 (global-set-key (kbd "M-p") 'elscreen-previous)
+
 ;; newline-and-indent
 (global-set-key (kbd "M-RET") 'newline)
 (global-set-key (kbd "RET") 'newline-and-indent)
