@@ -40,5 +40,10 @@
 (elscreen-set-prefix-key "\C-z")
 (elscreen-start)
 
+;; autosave last session
+(setq desktop-path '("~/.emacs.d/"))
+(setq desktop-enable t)
+(desktop-save-mode 1)
+
 ;; clang format
 (require 'clang-format)
