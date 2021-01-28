@@ -1,7 +1,5 @@
-(package-initialize)
-
 ; EMACS VERSION
-; GNU Emacs 25.0.50.2
+; GNU Emacs 27.1
 
 (add-to-list 'load-path "~/.emacs.d/settings")
 (add-to-list 'load-path "~/.emacs.d/custom")
