@@ -5,6 +5,8 @@
 
 ;; No tabs
 (setq-default indent-tabs-mode nil)
+;; Changes the indent level to 4 spaces instead of 2
+(setq auto-indent-assign-indent-level 4)
 
 (normal-erase-is-backspace-mode 0)
 (set-face-background 'minibuffer-prompt "yellow")
