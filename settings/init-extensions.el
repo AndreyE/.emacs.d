@@ -1,8 +1,7 @@
 (provide 'init-extensions)
 
 (require 'package)
-(push '("melpa" . "http://melpa.milkbox.net/packages/")
-      package-archives)
+(push '("melpa" . "http://melpa.org/packages/") package-archives)
 (package-initialize)
 
 ;(require 'cedet)
